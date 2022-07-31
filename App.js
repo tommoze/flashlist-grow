@@ -1,11 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { FlashList } from "@shopify/flash-list";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <FlashList
+        renderItem={({ item }) => {
+          return <View>{item}</View>;
+        }}
+        estimatedItemSize={50}
+        data={[]}
+        contentContainerStyle={{ backgroundColor: "green" }}
+      />
+      <Text>Footer</Text>
     </View>
   );
 }
@@ -13,8 +21,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "red",
   },
 });

@@ -1,0 +1,12 @@
+diff --git a/node_modules/@shopify/flash-list/dist/FlashList.js b/node_modules/@shopify/flash-list/dist/FlashList.js
+index cb2ee4f..06096f8 100644
+--- a/node_modules/@shopify/flash-list/dist/FlashList.js
++++ b/node_modules/@shopify/flash-list/dist/FlashList.js
+@@ -358,6 +358,7 @@ var FlashList = /** @class */ (function (_super) {
+                     // Min values are being used to suppress RLV's bounded exception
+                     style: { minHeight: 1, minWidth: 1 }, contentContainerStyle: {
+                         backgroundColor: this.contentStyle.backgroundColor,
++                        flexGrow: 1,
+                         // Required to handle a scrollview bug. Check: https://github.com/Shopify/flash-list/pull/187
+                         minHeight: 1,
+                         minWidth: 1,
