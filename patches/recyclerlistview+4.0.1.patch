@@ -1,5 +1,5 @@
 diff --git a/node_modules/recyclerlistview/dist/reactnative/platform/reactnative/scrollcomponent/ScrollComponent.js b/node_modules/recyclerlistview/dist/reactnative/platform/reactnative/scrollcomponent/ScrollComponent.js
-index 2f7033c..3811662 100644
+index 2f7033c..4a8a731 100644
 --- a/node_modules/recyclerlistview/dist/reactnative/platform/reactnative/scrollcomponent/ScrollComponent.js
 +++ b/node_modules/recyclerlistview/dist/reactnative/platform/reactnative/scrollcomponent/ScrollComponent.js
 @@ -102,7 +102,7 @@ var ScrollComponent = /** @class */ (function (_super) {
@@ -7,20 +7,7 @@ index 2f7033c..3811662 100644
          // } = this.props;
          return (React.createElement(Scroller, __assign({ ref: this._getScrollViewRef, removeClippedSubviews: false, scrollEventThrottle: this.props.scrollThrottle }, this.props, { horizontal: this.props.isHorizontal, onScroll: this._onScroll, onLayout: (!this._isSizeChangedCalledOnce || this.props.canChangeSize) ? this._onLayout : this.props.onLayout }),
 -            React.createElement(react_native_1.View, { style: { flexDirection: this.props.isHorizontal ? "row" : "column" } },
-+            React.createElement(react_native_1.View, { style: { flexDirection: this.props.isHorizontal ? "row" : "column", flexGrow: 1 } },
++            React.createElement(react_native_1.View, { style: __assign({ flexDirection: this.props.isHorizontal ? "row" : "column" }, this.props.scrollViewProps.contentContainerStyle) },
                  renderContentContainer(contentContainerProps, this.props.children),
                  this.props.renderFooter ? this.props.renderFooter() : null)));
      };
-diff --git a/node_modules/recyclerlistview/src/platform/reactnative/scrollcomponent/ScrollComponent.tsx b/node_modules/recyclerlistview/src/platform/reactnative/scrollcomponent/ScrollComponent.tsx
-index 0d0dedc..676af89 100644
---- a/node_modules/recyclerlistview/src/platform/reactnative/scrollcomponent/ScrollComponent.tsx
-+++ b/node_modules/recyclerlistview/src/platform/reactnative/scrollcomponent/ScrollComponent.tsx
-@@ -83,7 +83,7 @@ export default class ScrollComponent extends BaseScrollComponent {
-                 horizontal={this.props.isHorizontal}
-                 onScroll={this._onScroll}
-                 onLayout={(!this._isSizeChangedCalledOnce || this.props.canChangeSize) ? this._onLayout : this.props.onLayout}>
--                <View style={{ flexDirection: this.props.isHorizontal ? "row" : "column" }}>
-+                <View style={{ flexDirection: this.props.isHorizontal ? "row" : "column", flexGrow: 1 }}>
-                     {renderContentContainer(contentContainerProps, this.props.children)}
-                     {this.props.renderFooter ? this.props.renderFooter() : null}
-                 </View>

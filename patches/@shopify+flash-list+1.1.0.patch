@@ -1,12 +1,21 @@
 diff --git a/node_modules/@shopify/flash-list/dist/FlashList.js b/node_modules/@shopify/flash-list/dist/FlashList.js
-index cb2ee4f..06096f8 100644
+index cb2ee4f..5a41f14 100644
 --- a/node_modules/@shopify/flash-list/dist/FlashList.js
 +++ b/node_modules/@shopify/flash-list/dist/FlashList.js
-@@ -358,6 +358,7 @@ var FlashList = /** @class */ (function (_super) {
+@@ -357,7 +357,7 @@ var FlashList = /** @class */ (function (_super) {
+             react_1.default.createElement(recyclerlistview_1.ProgressiveListView, tslib_1.__assign({}, restProps, { ref: this.recyclerRef, layoutProvider: this.state.layoutProvider, dataProvider: this.state.dataProvider, rowRenderer: this.emptyRowRenderer, canChangeSize: true, isHorizontal: Boolean(horizontal), scrollViewProps: tslib_1.__assign({ onScrollBeginDrag: this.onScrollBeginDrag, onLayout: this.handleSizeChange, refreshControl: this.props.refreshControl || this.getRefreshControl(), 
                      // Min values are being used to suppress RLV's bounded exception
                      style: { minHeight: 1, minWidth: 1 }, contentContainerStyle: {
-                         backgroundColor: this.contentStyle.backgroundColor,
-+                        flexGrow: 1,
+-                        backgroundColor: this.contentStyle.backgroundColor,
++                        ...this.contentStyle,
                          // Required to handle a scrollview bug. Check: https://github.com/Shopify/flash-list/pull/187
                          minHeight: 1,
                          minWidth: 1,
+@@ -412,6 +412,7 @@ var FlashList = /** @class */ (function (_super) {
+             var paddingIgnored = padding || paddingHorizontal || paddingLeft || paddingRight;
+             return {
+                 style: {
++                    ...rest,
+                     paddingTop: paddingTop || paddingVertical || padding || 0,
+                     paddingBottom: paddingBottom || paddingVertical || padding || 0,
+                     backgroundColor: backgroundColor,

@@ -17,8 +17,8 @@ export default function App() {
         }}
         estimatedItemSize={50}
         data={[]}
-        contentContainerStyle={{ backgroundColor: "green" }}
-        ListEmptyComponent={Empty}
+        contentContainerStyle={{ backgroundColor: "green", flexGrow: 1 }}
+        // ListEmptyComponent={Empty}
       />
       <Text>Footer</Text>
     </View>
